@@ -1,22 +1,22 @@
 # Contributor: m.reed art mykolab dart com
 # Maintainer: aksr <aksr at t-com dot me>
 pkgname=xbanish-git
-pkgver=1.5.r6.g0f2157c
+pkgver=99999.1.6.r8.gb70a13a
 pkgrel=1
 pkgdesc="Banish the mouse cursor when typing, show it again when the mouse moves."
 arch=('i686' 'x86_64')
-url="https://github.com/jcs/xbanish"
+url="https://github.com/amosbird/xbanish"
 license=('BSD')
 depends=('libxfixes' 'libxi')
 makedepends=('git')
 conflicts=('xbanish')
 provides=('xbanish')
-source=("$pkgname::git+https://github.com/jcs/xbanish.git")
+source=("$pkgname::git+https://github.com/amosbird/xbanish.git")
 md5sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/$pkgname"
-  git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g;s/^v//g'
+  echo 99999.$(git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g;s/^v//g')
 }
 
 build() {
